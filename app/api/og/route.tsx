@@ -101,7 +101,7 @@ export async function GET(request: NextRequest) {
         >
           <span style={{ fontSize: 24, color: 'white' }}>☕</span>
           <span style={{ fontSize: 24, color: 'white', fontWeight: 600 }}>
-            Take the quiz → coffeevibes.quiz
+            Take the Coffee Vibe Quiz!
           </span>
         </div>
       </div>

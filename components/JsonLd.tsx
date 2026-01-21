@@ -1,6 +1,13 @@
 import quizData from '@/data/quiz-data.json'
 
+const getBaseUrl = () => {
+  if (typeof window !== 'undefined') return window.location.origin
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
+  return process.env.NEXT_PUBLIC_SITE_URL || 'https://coffee-vibe-quiz.vercel.app'
+}
+
 export function QuizJsonLd() {
+  const baseUrl = getBaseUrl()
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Quiz',
@@ -22,14 +29,14 @@ export function QuizJsonLd() {
     author: {
       '@type': 'Organization',
       name: 'Coffee Vibe Quiz',
-      url: 'https://coffeevibes.quiz',
+      url: baseUrl,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Coffee Vibe Quiz',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://coffeevibes.quiz/logo.png',
+        url: `${baseUrl}/logo.png`,
       },
     },
   }
@@ -43,15 +50,16 @@ export function QuizJsonLd() {
 }
 
 export function WebsiteJsonLd() {
+  const baseUrl = getBaseUrl()
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Coffee Vibe Quiz',
     description: 'Discover your coffee personality in 60 seconds. Are you an Espresso Addict, Latte Art Master, Chill Cold Brew, or Chaos Matcha?',
-    url: 'https://coffeevibes.quiz',
+    url: baseUrl,
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://coffeevibes.quiz/search?q={search_term_string}',
+      target: `${baseUrl}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
     sameAs: [
@@ -70,12 +78,13 @@ export function WebsiteJsonLd() {
 }
 
 export function ResultJsonLd({ result }: { result: { title: string; description: string; emoji: string } }) {
+  const baseUrl = getBaseUrl()
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: `I'm ${result.title}! - Coffee Vibe Quiz Result`,
     description: result.description,
-    image: `https://coffeevibes.quiz/api/og?result=${encodeURIComponent(result.title)}`,
+    image: `${baseUrl}/api/og?result=${encodeURIComponent(result.title)}`,
     author: {
       '@type': 'Organization',
       name: 'Coffee Vibe Quiz',
@@ -85,12 +94,12 @@ export function ResultJsonLd({ result }: { result: { title: string; description:
       name: 'Coffee Vibe Quiz',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://coffeevibes.quiz/logo.png',
+        url: `${baseUrl}/logo.png`,
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://coffeevibes.quiz',
+      '@id': baseUrl,
     },
   }
 
