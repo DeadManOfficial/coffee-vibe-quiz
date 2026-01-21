@@ -1,0 +1,128 @@
+{
+  "title": "What's Your Coffee Vibe?",
+  "subtitle": "Answer 8 questions to discover your caffeine personality",
+  "questions": [
+    {
+      "id": 1,
+      "text": "It's Monday morning. How do you approach your first coffee?",
+      "options": [
+        { "text": "Triple shot, no waiting, inject it directly", "scores": { "espresso": 3, "latte": 0, "coldbrew": 0, "matcha": 1 } },
+        { "text": "Carefully crafted pour-over with a side of peace", "scores": { "espresso": 0, "latte": 3, "coldbrew": 1, "matcha": 1 } },
+        { "text": "Grab yesterday's cold brew from the fridge", "scores": { "espresso": 0, "latte": 0, "coldbrew": 3, "matcha": 1 } },
+        { "text": "Something colorful that confuses the barista", "scores": { "espresso": 1, "latte": 1, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Your ideal coffee shop vibe is:",
+      "options": [
+        { "text": "Standing bar, no seats, everyone's in a hurry", "scores": { "espresso": 3, "latte": 0, "coldbrew": 0, "matcha": 0 } },
+        { "text": "Cozy corner with plants and jazz music", "scores": { "espresso": 0, "latte": 3, "coldbrew": 1, "matcha": 1 } },
+        { "text": "Anywhere with WiFi and outlets", "scores": { "espresso": 1, "latte": 0, "coldbrew": 3, "matcha": 0 } },
+        { "text": "Pink walls, neon signs, very Instagrammable", "scores": { "espresso": 0, "latte": 1, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "How do you handle a 3pm energy crash?",
+      "options": [
+        { "text": "Another espresso. Or three.", "scores": { "espresso": 3, "latte": 0, "coldbrew": 1, "matcha": 0 } },
+        { "text": "Decaf latte with oat milk and a cookie", "scores": { "espresso": 0, "latte": 3, "coldbrew": 0, "matcha": 1 } },
+        { "text": "I meal-prepped cold brew for this exact moment", "scores": { "espresso": 0, "latte": 0, "coldbrew": 3, "matcha": 1 } },
+        { "text": "Matcha lemonade with adaptogenic mushrooms", "scores": { "espresso": 0, "latte": 0, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Your coffee order takes:",
+      "options": [
+        { "text": "2 seconds. Espresso. Done.", "scores": { "espresso": 3, "latte": 0, "coldbrew": 1, "matcha": 0 } },
+        { "text": "A minute while I customize every detail", "scores": { "espresso": 0, "latte": 3, "coldbrew": 0, "matcha": 1 } },
+        { "text": "I don't order, I bring my own", "scores": { "espresso": 0, "latte": 0, "coldbrew": 3, "matcha": 0 } },
+        { "text": "Long enough to explain what ceremonial grade means", "scores": { "espresso": 0, "latte": 1, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Your reaction when someone says 'decaf':",
+      "options": [
+        { "text": "Visible disgust. Why even bother?", "scores": { "espresso": 3, "latte": 0, "coldbrew": 1, "matcha": 0 } },
+        { "text": "Valid choice! Especially after 2pm", "scores": { "espresso": 0, "latte": 3, "coldbrew": 0, "matcha": 2 } },
+        { "text": "Cool, more caffeine for me", "scores": { "espresso": 1, "latte": 0, "coldbrew": 3, "matcha": 0 } },
+        { "text": "Have you tried hojicha instead?", "scores": { "espresso": 0, "latte": 0, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Your mug/cup of choice:",
+      "options": [
+        { "text": "Tiny ceramic cup, authentic Italian style", "scores": { "espresso": 3, "latte": 1, "coldbrew": 0, "matcha": 0 } },
+        { "text": "Oversized mug with a motivational quote", "scores": { "espresso": 0, "latte": 3, "coldbrew": 0, "matcha": 1 } },
+        { "text": "Mason jar or reusable tumbler", "scores": { "espresso": 0, "latte": 0, "coldbrew": 3, "matcha": 1 } },
+        { "text": "Handmade ceramic bowl from Etsy", "scores": { "espresso": 0, "latte": 1, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "How many coffees per day is 'normal'?",
+      "options": [
+        { "text": "6+ and I've stopped counting", "scores": { "espresso": 3, "latte": 0, "coldbrew": 1, "matcha": 0 } },
+        { "text": "2-3, savored slowly", "scores": { "espresso": 0, "latte": 3, "coldbrew": 1, "matcha": 1 } },
+        { "text": "One giant batch that lasts all day", "scores": { "espresso": 0, "latte": 0, "coldbrew": 3, "matcha": 0 } },
+        { "text": "I've transcended coffee counting", "scores": { "espresso": 0, "latte": 0, "coldbrew": 0, "matcha": 3 } }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Your friends describe your coffee habits as:",
+      "options": [
+        { "text": "Concerning but impressive", "scores": { "espresso": 3, "latte": 0, "coldbrew": 1, "matcha": 0 } },
+        { "text": "Aesthetic and cozy", "scores": { "espresso": 0, "latte": 3, "coldbrew": 0, "matcha": 2 } },
+        { "text": "Efficient and low-maintenance", "scores": { "espresso": 1, "latte": 0, "coldbrew": 3, "matcha": 0 } },
+        { "text": "Trendy and confusing", "scores": { "espresso": 0, "latte": 1, "coldbrew": 0, "matcha": 3 } }
+      ]
+    }
+  ],
+  "results": {
+    "espresso": {
+      "id": "espresso",
+      "title": "The Espresso Addict",
+      "emoji": "⚡",
+      "color": "from-amber-900 to-yellow-600",
+      "description": "Sleep is for the weak, and you've got things to DO. You're the person who's already sent 47 emails before anyone else has even opened their laptop. Your blood type is probably 'dark roast' and your spirit animal is a caffeinated hummingbird. Doctors are concerned. Your productivity is not.",
+      "traits": ["Ambitious", "Intense", "Probably vibrating right now"],
+      "perfectDrink": "Quad shot espresso, no water, no milk, no nonsense",
+      "shareText": "I'm The Espresso Addict! My blood type is dark roast."
+    },
+    "latte": {
+      "id": "latte",
+      "title": "Latte Art Master",
+      "emoji": "🎨",
+      "color": "from-amber-100 to-orange-300",
+      "description": "You don't just drink coffee, you experience it. Every cup is an opportunity for mindfulness, aesthetic appreciation, and a perfectly angled photo. Your oat milk is organic, your sweater is cozy, and your vibes are immaculate. You've definitely said 'self-care' unironically today.",
+      "traits": ["Aesthetic", "Cozy", "Main character energy"],
+      "perfectDrink": "Oat milk latte with vanilla and a rosetta on top",
+      "shareText": "I'm a Latte Art Master! Cozy vibes only."
+    },
+    "coldbrew": {
+      "id": "coldbrew",
+      "title": "Chill Cold Brew",
+      "emoji": "🧊",
+      "color": "from-slate-700 to-blue-400",
+      "description": "Efficiency is your love language. Why make coffee every morning when you can batch-brew enough to last a week? You're low-maintenance but high-functioning, probably wearing the same hoodie for the third day (it's clean, you think). Maximum caffeine, minimum effort. Respect.",
+      "traits": ["Efficient", "Unbothered", "Probably a programmer"],
+      "perfectDrink": "32oz cold brew, black, from a mason jar",
+      "shareText": "I'm Chill Cold Brew! Maximum caffeine, minimum effort."
+    },
+    "matcha": {
+      "id": "matcha",
+      "title": "Chaos Matcha",
+      "emoji": "🍵",
+      "color": "from-green-400 to-emerald-600",
+      "description": "You've evolved beyond basic coffee culture into the realm of ceremonial-grade enlightenment. Your drinks have ingredients most people can't pronounce, and you've definitely explained the L-theanine/caffeine synergy to someone who didn't ask. Chaotic? Yes. But make it wellness.",
+      "traits": ["Trendy", "Chaotic", "Spiritually caffeinated"],
+      "perfectDrink": "Iced matcha with oat milk, blue spirulina, and a manifestation",
+      "shareText": "I'm Chaos Matcha! Chaotic but make it wellness."
+    }
+  }
+}

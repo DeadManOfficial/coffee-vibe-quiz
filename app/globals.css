@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 17, 17, 17;
+  --background-end-rgb: 38, 38, 38;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Quiz progress bar */
+.progress-bar {
+  transition: width 0.5s ease-out;
+}
+
+/* Button hover effects */
+.btn-quiz {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-quiz::before {
+  content: '';
+  @apply absolute inset-0 bg-white/10 translate-x-[-100%] transition-transform duration-300;
+}
+
+.btn-quiz:hover::before {
+  @apply translate-x-0;
+}
+
+/* Card glow effect */
+.card-glow {
+  @apply relative;
+}
+
+.card-glow::before {
+  content: '';
+  @apply absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl opacity-0 blur transition-opacity duration-300;
+}
+
+.card-glow:hover::before {
+  @apply opacity-30;
+}
+
+/* Share button animations */
+.share-btn {
+  @apply transition-all duration-200 hover:scale-110 active:scale-95;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
