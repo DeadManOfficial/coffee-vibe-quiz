@@ -1,35 +1,99 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { WebsiteJsonLd, FAQJsonLd } from '@/components/JsonLd'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const baseUrl = 'https://coffeevibes.quiz' // Update with your custom domain
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f59e0b' },
+    { media: '(prefers-color-scheme: dark)', color: '#171717' },
+  ],
+}
 
 export const metadata: Metadata = {
-  title: "What's Your Coffee Vibe? | Personality Quiz",
-  description: 'Discover your caffeine personality in 8 questions. Are you an Espresso Addict, Latte Art Master, Chill Cold Brew, or Chaos Matcha?',
-  keywords: ['coffee quiz', 'personality quiz', 'coffee personality', 'fun quiz', 'viral quiz'],
-  authors: [{ name: 'Coffee Vibe Quiz' }],
+  metadataBase: new URL(baseUrl),
+  title: {
+    template: '%s | Coffee Vibe Quiz',
+    default: "What's Your Coffee Vibe? | Personality Quiz",
+  },
+  description: 'Discover your coffee personality in 60 seconds! Take the viral quiz to find out if you\'re an Espresso Addict, Latte Art Master, Chill Cold Brew, or Chaos Matcha. Free & shareable!',
+  keywords: [
+    'coffee quiz',
+    'personality quiz',
+    'coffee personality test',
+    'what coffee am I',
+    'fun quiz',
+    'viral quiz',
+    'espresso personality',
+    'latte quiz',
+    'coffee type quiz',
+    'BuzzFeed quiz',
+    'TikTok quiz',
+    'shareable quiz',
+  ],
+  authors: [{ name: 'Coffee Vibe Quiz', url: baseUrl }],
+  creator: 'Coffee Vibe Quiz',
+  publisher: 'Coffee Vibe Quiz',
+  formatDetection: {
+    telephone: false,
+    date: false,
+    email: false,
+    address: false,
+  },
   openGraph: {
-    title: "What's Your Coffee Vibe?",
-    description: 'Discover your caffeine personality in 8 questions!',
     type: 'website',
     locale: 'en_US',
+    url: baseUrl,
+    siteName: 'Coffee Vibe Quiz',
+    title: "What's Your Coffee Vibe? ☕",
+    description: 'Discover your coffee personality in 60 seconds! Are you Espresso Addict, Latte Art Master, Chill Cold Brew, or Chaos Matcha?',
     images: [
       {
-        url: '/images/og-default.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: "What's Your Coffee Vibe? Quiz",
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "What's Your Coffee Vibe?",
-    description: 'Discover your caffeine personality in 8 questions!',
-    images: ['/images/og-default.png'],
+    site: '@coffeevibesquiz',
+    creator: '@coffeevibesquiz',
+    title: "What's Your Coffee Vibe? ☕",
+    description: 'Discover your coffee personality in 60 seconds!',
+    images: ['/og-image.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: baseUrl,
+  },
+  category: 'entertainment',
+  classification: 'Personality Quiz',
 }
 
 export default function RootLayout({
@@ -38,7 +102,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${inter.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <WebsiteJsonLd />
+        <FAQJsonLd />
+      </head>
       <body className={`${inter.className} bg-neutral-950 text-white antialiased`}>
         <main className="min-h-screen">
           {children}

@@ -5,6 +5,8 @@ type Props = {
   params: { vibe: string }
 }
 
+const baseUrl = 'https://coffeevibes.quiz' // Update with your custom domain
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const vibe = params.vibe as keyof typeof quizData.results
   const result = quizData.results[vibe]
@@ -16,21 +18,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const title = `I'm ${result.title}! | Coffee Vibe Quiz`
-  const description = result.shareText
+  const description = `${result.shareText} Take the quiz to discover YOUR coffee personality!`
+  const ogImageUrl = `${baseUrl}/api/og?vibe=${vibe}`
 
   return {
     title,
     description,
+    keywords: [
+      result.title.toLowerCase(),
+      'coffee quiz result',
+      'personality quiz result',
+      'coffee personality',
+      ...result.traits.map(t => t.toLowerCase()),
+    ],
     openGraph: {
       title,
       description,
-      type: 'website',
+      type: 'article',
+      url: `${baseUrl}/results/${vibe}`,
+      siteName: 'Coffee Vibe Quiz',
       images: [
         {
-          url: `/images/og-${vibe}.png`,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: result.title,
+          alt: `${result.title} - Coffee Vibe Quiz Result`,
         },
       ],
     },
@@ -38,7 +50,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title,
       description,
-      images: [`/images/og-${vibe}.png`],
+      images: [ogImageUrl],
+      creator: '@coffeevibesquiz',
+    },
+    alternates: {
+      canonical: `${baseUrl}/results/${vibe}`,
     },
   }
 }
