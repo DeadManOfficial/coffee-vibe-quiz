@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { WebsiteJsonLd, FAQJsonLd } from '@/components/JsonLd'
 import './globals.css'
 
@@ -63,15 +64,6 @@ export const metadata: Metadata = {
     siteName: 'Coffee Vibe Quiz',
     title: "What's Your Coffee Vibe? ☕",
     description: 'Discover your coffee personality in 60 seconds! Are you Espresso Addict, Latte Art Master, Chill Cold Brew, or Chaos Matcha?',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: "What's Your Coffee Vibe? Quiz",
-        type: 'image/png',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -79,7 +71,6 @@ export const metadata: Metadata = {
     creator: '@coffeevibesquiz',
     title: "What's Your Coffee Vibe? ☕",
     description: 'Discover your coffee personality in 60 seconds!',
-    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -107,9 +98,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${inter.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/manifest.json" />
         <WebsiteJsonLd />
         <FAQJsonLd />
@@ -119,6 +109,7 @@ export default function RootLayout({
           {children}
         </main>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
