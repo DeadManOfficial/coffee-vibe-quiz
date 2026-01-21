@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import SocialLinks from '@/components/SocialLinks'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -58,6 +59,9 @@ export default function Home() {
         <p className="mt-8 text-sm text-neutral-500">
           🔥 10,000+ coffee lovers have discovered their vibe
         </p>
+
+        {/* Social Links */}
+        <SocialLinks />
       </div>
 
       {/* Footer */}
